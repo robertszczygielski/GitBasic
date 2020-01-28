@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- <title>reveal.js</title> -->
+		<title>Git Podstawy</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+
+					<section>
+						<h3>Robert Szczygielski</h3>
+						<p><i>Java/Kotlin Developer</i></p>
+					</section>
+					<section>
+						<h2>Git podstawy</h2>
+					</section>
+				</section>		 						
+				<section>
+					
+					<section data-background="img/agile.png" id="fragments">
+						<p><span style="font-size: 88px;font-style: italic;color:red">git</p>
+						<p><span style="font-size: 88px;color:red">System kontroli wersji</span></p>
+						<br><br><br><br><br>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git krótka historia</p>
+						<p class="fragment">Twóraca <span style="color:red">Linus Torvalds</span></p>
+						<p class="fragment">2005</p>
+						<p class="fragment">4 dni</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git init</p>
+						<p class="fragment">Tworzy katalog '.git'</p>
+						<p class="fragment">Zmiany w plikach nie są jeszcze śledzone</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">BŁĄD?</p>
+						<p class="fragment">git config --global user.name "Jan Kowalski"</p>
+						<p class="fragment">git config --global user.email "jkowalski@janek.com"</p>
+					</section>
+				</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git add</p>
+						<p class="fragment">Polecenie dla git'a, aby zaczął śledzić pliki</p>
+						<p class="fragment">Pliki są śledzone, ale zmiany <span style="color:red">nie są</span> zapisane</p>
+						<p class="fragment">Już śledzone pliki dodaje do Kolejki Oczekującej</p>
+					</section>
+					<section  data-background-interactive id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">Dwa (najpoularniejsze) użycia</p>
+						<p class="fragment">git add plik.java</p>
+						<p class="fragment">git add .</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git commit</p>
+						<p class="fragment">Zapis, Save, zmian</p>
+						<p class="fragment">Umożliwia cofnięcie się do miejsca jego wykonania</p>
+					</section>
+					<section  data-background-interactive id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">Z parametrem '-m' i bez parametru</p>
+						<p class="fragment">git commit</p>
+						<p class="fragment">git commit -m 'komunikat, informacja o zmianie'</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git add i git commit, trochę więcej</p>
+						<p class="fragment">'commit' jest zależny od 'add'</p>
+						<p class="fragment">przed 'commit' zawsze występuje 'add'</p>
+					</section>
+					<section  data-background-image="img/git_lifecycle.png" data-background-size="70%" id="fragments">
+					       
+					</section>
+					<section id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">Przepływ pracy, add i commit</p>
+						<p class="fragment">zmiana na pliku</p>
+						<p class="fragment">git add .</p>
+						<p class="fragment">(możliwe dalsze zmiany na pliku i git add .)</p>
+						<p class="fragment">git commit -m 'coś się zmieniło'</p>
+					</section>
+					<section data-background-interactive id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">Ciekawostka - Zmiany na plikach po git add .</p>
+						<p class="fragment">git add .</p>
+						<p class="fragment">(możliwe dalsze zmiany na pliku i <span class="fragment highlight-red">git add .</span>)</p>
+						<p class="fragment">plik występuje w 2 stanach: edytowanym i gotowym do commit</p>						
+					</section>
+					<section data-background-interactive id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">Połączone komendy add i commit, poprzez parametr</p>
+						<p class="fragment">-a</p>
+						<p class="fragment">git commit -a <span style="color:#87CEEB">=</span><span style="color:#7FFF00"> git add . && git commit</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+					        <p><span style="font-size: 88px;font-style: italic">one to rule them all</p>
+						<p class="fragment">git commit -am 'komunikat'</p>
+						<p class="fragment">git commit -a -m 'komunikat'</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="color:#FF00FF">git init </span><span style="color:#7FFF00">inicjalizacja git w katalogu</span></p>
+						<p><span style="color:#00BFFF">git add pliku.txt </span><span style="color:#7FFF00">dodanie pliku do poczekalnia zapisu</span></p>
+						<p><span style="color:#00BFFF">git add . </span><span style="color:#7FFF00">dodanie plików do poczekalni zapisu</span></p>
+						<p><span style="color:#7FFFD4">git commit </span><span style="color:#7FFF00">utrwalenie plików z poczekalni</span></p>
+						<p><span style="color:#7FFFD4">git commit -m </span><span style="color:#7FFF00">utrwalenie plików z poczekalni z komunikatem</span></p>
+						<p><span style="color:#808800">git commit -a </span><span style="color:#7FFF00">git add . && git commit</span></p>
+						<p><span style="color:#808800">git commit -am </span><span style="color:#7FFF00">git add . && git commit -m 'komunikat'</span></p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Sprawdzenia 'co się dzieje?'</p>
+						<p class="fragment">git status</p>
+						<p class="fragment">git log</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git status</p>
+						<p class="fragment">Sprawdza aktualny stan lokalnego repozytorium</p>
+						<p class="fragment"><span style="color:red">Zaleca się nadurzywanie</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git log</p>
+						<p class="fragment">Przeglądanie zmian na repozytorium</p>
+						<p class="fragment"><span style="color:red">Najlepiej spersonalizować</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git log - parametry</p>
+						<p class="fragment">--oneline <span style="color:#7FFF00">skraca historię, tylko nagłówek komunikatu</span></p>
+						<p class="fragment">--author="kowalski" <span style="color:#7FFF00">commity dodane przez Kowalskiego</span></p>
+						<p class="fragment">--grep="kotek" <span style="color:#7FFF00">commity, w których komunikat zawiera słowo "kotek"</span></p>
+						<p class="fragment">--graph <span style="color:#7FFF00">forma graficzna commitów</span></p>
+						<p class="fragment">--decorate <span style="color:#7FFF00">umieszcza informacjie o tagach, gałęziach...</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git log - przykład</p>
+						<p>git log --oneline --graph --decorate</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Cofanie zmian, czyszczenie, usuwanie</p>
+						<p class="fragment">git clean</p>
+						<p class="fragment">git checkout</p>
+						<p class="fragment">git reset</p>
+						<p class="fragment">git revert</p>
+						<p class="fragment">git rm</p>
+						<p class="fragment">git mv</p>
+					</section>
+
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git clean</p>
+						<p class="fragment">usuwa pliki/katalogi, które nie były śledzone</p>
+						<p class="fragment">nie wykonano na nich git add .</p>
+						<p class="fragment">wymaga paramatru -n, -i, -f</p>
+						<p class="fragment">-n <span style="color:green">wypisze pliku możliwe do usunięcia</span></p>
+						<p class="fragment">-i <span style="color:green">tryb interaktywny</span></p>
+						<p class="fragment">-f <snan style="color:green">usuwa pliki</span></p>
+						<p class="fragment">git clean -n</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git clean parametr -d</p>
+						<p class="fragment">-d <span style="color:green">wypisze katalogów możliwe do usunięcia</span></p>	
+						<p class="fragment">git clean -nd <span style="color:green">wypisze pliki i katalogi</span></p>
+						<p class="fragment">git clean -fnd <span style="color:green">usunie pliki i katalogi</span></p>
+						<p class="fragment">git clean -ind <span style="color:green">usunie pliki i katalogi, tryb interaltywny</span></p>
+					</section>
+					
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git checkout</p>
+						<p class="fragment">Cafa zmiany na zmidyfikowanych plikach</p>
+						<p class="fragment">Przed wykonaniem 'git add .'</p>
+						<p class="fragment">git checkout -- .</p>
+						<p class="fragment">git checkout -- plik.txt</p>
+						<p class="fragment"><span style="color:green">Ma jeszcze inne zastosowania</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git reset</p>
+						<p class="fragment">Usuwa pliki z kolejki oczekującej</p>
+						<p class="fragment">Cofa 'git add .'</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git revert</p>
+						<p class="fragment">Usuwa commit</p>
+						<p class="fragment">Tworzy nowy commit</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git rm</p>
+						<p class="fragment">Usuwa plik</p>
+						<p class="fragment"><span style="color:red">Informacje dla git, że plik już nie istnieje</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git mv</p>
+						<p class="fragment">Zmienia nazwę pliku</p>
+						<p class="fragment"><span style="color:red">Informacje dla git, że plik już zmienił nazwę</span></p>
+					</section>
+				</section>
+				<section>
+					<section data-background-iframe="img/branch.jpg" id="fragments">
+						<p><span style="font-size: 88px;font-style: italic;color:red">Rozgałęzianie</p>
+						<p class="fragment"> <span style="font-style: bold;color:red">git branch</span></p>
+						<p class="fragment"> <span style="font-style: bold;color:red">git checkout</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git branch</p>
+						<p class="fragment">Zarządzanie gałęziami</p>
+						<p class="fragment">git branch <span style="color:green">wyświetla lokalne gałęzie</span></p>
+						<p class="fragment">git branch -a <span style="color:green">wyświetla lokalne i zdalne gałęzie</span></p>
+						<p class="fragment">git branch -r <span style="color:green">wyświetla zdalne gałęzie</span></p>
+						<p class="fragment">git branch -d <span style="color:red">usuwa gałąź</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git checkout </p>
+						<p class="fragment">Zmiana gałęzi</p>
+						<p class="fragment">git checkout nazwa_gałęzi</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Tworzenie gałęzi</p>
+						<p class="fragment">git branch nazwa_gałęzi</p>
+						<p class="fragment">git checkout -b nazwa_gałęzi</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Przełączenie do commita</p>
+						<p class="fragment">git log --oneline <span style="color:green">do odczytanie hash np.: 'a88b525'</span></p>
+						<p class="fragment">git checkout <span style="color:green">hash</span></p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git stash</p>
+						<p class="fragment">Nie chce commitować</p>
+						<p class="fragment">Nie ta gałąź <span style="color:green">gdy występują problemy podczas zmiany</span></p>
+						<p class="fragment">Odkładanie tylko zmian w śledzonych plikach <span style="color:green">git add .</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">git stash pop/apply/push <p>
+						<p class="fragment">git stash apply stash@{1} <span style="color:green">pobiera zmany ze stosu i nie usuwa ich ze stosu</span></p>
+						<p class="fragment">git stash pop <span style="color:yellow">stash@{1}</span> <span style="color:green">pobiera zmany ze stosu i usuwa ze stosu</span></p>
+						<p class="fragment">git stash push <span style="color:green">możliwość dodatkowych opcji przy odkładaniu</span></p>
+						<p class="fragment">git stash push -m 'komentarz' -u <span style="color:green">-m = dadanie komentarza</span> <span style="color:yellow">-u = odłożenie nie śledzonych plików</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Najpopularniejsze:</p>
+						<p class="fragment">git stash</p>
+						<p class="fragment">zmiana gałęzi <span style="color:green">git checkout galaz_2</span></p>
+						<p class="fragment">git pop</p>
+					</section>
+					
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Łączenie gałęzi</p>
+						<p class="fragment">git merge <span style="color:green">nazwa_galezi</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Konflikty podczas merge</p>
+						<p class="fragment"><<<<<<< HEAD</p>
+						<p class="fragment">zmiany na obecnym branchu</p>
+						<p class="fragment">=======</p>
+						<p class="fragment">zmiany z łączonego brancza</p>
+						<p class="fragment">>>>>>>> laczony_branch</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Konflikty podczas merge cdn.</p>
+						<p>git add .</p>
+						<p>git commit</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Dzielenie się gałęziami</p>
+						<p class="fragment">git push <span style="color:green">wysyłanie do repozyrorium</span></p>
+						<p class="fragment">git pull <span style="color:green">pobieranie z repozyrorium</span></p>
+						<p class="fragment"><span style="color:red">Wykorzystanie obowjązkowe minimum raz dziennie</span></p>
+					</section>
+				</section>
+				<section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Oznaczanie ważnych zmian - tagi</p>
+						<p class="fragment">git tag v1.0.0 <span style="color:green">dodanie tag'a</span></p>
+						<p class="fragment">git tag v1.0.0 -am "komentarz" <span style="color:green">tag z komentarzem</span></p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Wysyłanie taga na remote</p>
+						<p>git push --tags</p>
+					</section>
+					<section data-background-interactive id="fragments">
+						<p><span style="font-size: 88px;font-style: italic">Usuwanie taga na remote</p>
+						<p>git push orgin -d v1.0.0</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>???</h1>
+					</section>
+					<section>
+						<p>https://www.linkedin.com/in/robertszczygielski<p>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
